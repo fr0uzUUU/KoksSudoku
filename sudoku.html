@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sudoku</title>
+    
+     <style>
+        body {
+            font-family: Arial;
+        }
+
+        .import {
+            padding-bottom: 0.3em;
+        }
+
+            .import input[type=text] {
+                width: 600px;
+            }
+
+        .valid {
+            background-color: limegreen;
+        }
+
+        .invalid {
+            background-color: red;
+        }
+
+        .imported_square {
+            background-color: lightgray;
+        }
+
+        .sudoku {
+            border: 5px   black;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            .sudoku tr {
+                padding: 0;
+            }
+
+            .sudoku td {
+                padding: 0;
+                border: 1px ridge black;
+                width: 1em;
+            }
+
+            .sudoku input {
+                width: 1.2em;
+                border: 0;
+                font-size: 25pt;
+                text-align: center;
+            }
+
+            .sudoku .thick_right {
+                border-right: 10px solid black !important;
+            }
+            .sudoku .thick_right2 {
+                border-right: 10px solid black !important;
+            }
+            .sudoku .thick_left2 {
+                border-left: 10px solid black !important;  
+            }
+
+            .sudoku .thick_bottom {
+                border-bottom: 10px solid black;
+            }
+            .sudoku .thick_bottom2 {
+                border-bottom: 10px solid black;
+            }
+            .sudoku .thick_top {   
+                border-top: 10px solid black;
+
+            }
+
+            #main {
+                text-align: center;
+                width: 100%;
+                height:auto;
+                background-color: green;
+            }
+    </style> 
+</head>
+<body>
+
+
+<div id="main">
+
+<div class="import">
+    <input type="text" name="import_string" value="080100007000070960026900130000290304960000082502047000013009840097020000600003070" />
+    <br />
+    <button id="import">Import</button>
+</div>
+
+<table class="sudoku">
+    <tbody>
+        <tr class="1 thick_top">
+            <td class="1 thick_left2"><input type="text" maxlength="1" /></td>
+            <td class="2"><input type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="4"><input type="text" maxlength="1" /></td>
+            <td class="5"><input type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="7"><input type="text" maxlength="1" /></td>
+            <td class="8"><input type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input type="text" maxlength="1" /></td>
+        </tr>
+        <tr class="2">
+            <td class="1 thick_left2"><input type="text" maxlength="1" /></td>
+            <td class="2"><input type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="4"><input type="text" maxlength="1" /></td>
+            <td class="5"><input type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="7"><input type="text" maxlength="1" /></td>
+            <td class="8"><input type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input type="text" maxlength="1" /></td>
+        </tr>
+        <tr class="3 thick_bottom">
+            <td class="1 thick_left2"><input type="text" maxlength="1" /></td>
+            <td class="2"><input type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="4"><input type="text" maxlength="1" /></td>
+            <td class="5"><input type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="7"><input type="text" maxlength="1" /></td>
+            <td class="8"><input type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input type="text" maxlength="1" /></td>
+        </tr>
+        <tr class="4">
+            <td class="1 thick_left2"><input type="text" maxlength="1" /></td>
+            <td class="2"><input type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="4"><input type="text" maxlength="1" /></td>
+            <td class="5"><input type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="7"><input type="text" maxlength="1" /></td>
+            <td class="8"><input type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input type="text" maxlength="1" /></td>
+        </tr>
+        <tr class="5">
+            <td class="1 thick_left2"><input type="text" maxlength="1" /></td>
+            <td class="2"><input type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="4"><input type="text" maxlength="1" /></td>
+            <td class="5"><input type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="7"><input type="text" maxlength="1" /></td>
+            <td class="8"><input type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input type="text" maxlength="1" /></td>
+        </tr>
+        <tr class="6 thick_bottom">
+            <td class="1 thick_left2"><input type="text" maxlength="1" /></td>
+            <td class="2"><input type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="4"><input type="text" maxlength="1" /></td>
+            <td class="5"><input type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="7"><input type="text" maxlength="1" /></td>
+            <td class="8"><input type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input type="text" maxlength="1" /></td>
+        </tr>
+        <tr class="7">
+            <td class="1 thick_left2"><input type="text" maxlength="1" /></td>
+            <td class="2"><input type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="4"><input type="text" maxlength="1" /></td>
+            <td class="5"><input type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="7"><input type="text" maxlength="1" /></td>
+            <td class="8"><input type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input type="text" maxlength="1" /></td>
+        </tr>
+        <tr class="8">
+            <td class="1 thick_left2"><input type="text" maxlength="1" /></td>
+            <td class="2"><input type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="4"><input type="text" maxlength="1" /></td>
+            <td class="5"><input type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="7"><input type="text" maxlength="1" /></td>
+            <td class="8"><input type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input type="text" maxlength="1" /></td>
+        </tr>
+        <tr class="9 thick_bottom2">
+            <td class="1 thick_left2"><input type="text" maxlength="1" /></td>
+            <td class="2"><input type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="4"><input type="text" maxlength="1" /></td>
+            <td class="5"><input type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input type="text" maxlength="1" /></td>
+            <td class="7"><input type="text" maxlength="1" /></td>
+            <td class="8"><input type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input type="text" maxlength="1" /></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>
