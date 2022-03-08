@@ -139,11 +139,23 @@ function losuj() {
     tablica = document.getElementsByClassName('pole');
 
     for (var a = 0; a < 10; a++) {
-        var losowa1 = Math.floor(Math.random() * 81) + 0;
-        var losowa2 = Math.floor(Math.random() * 81) + 0;
-        tablica[losowa1, losowa2].value = Math.floor(Math.random() * 9) + 1;
-        console.log(tablica[losowa1, losowa2]);
+        min = 1;
+        max = 9;
+        var losowa1 = Math.floor(Math.random() * (max - min + 1)) + 0;
+        var losowa2 = Math.floor(Math.random() * (max - min + 1)) + 0;
+        console.log("losowa 1", losowa1);
+        console.log("losowa 2", losowa2);
+        tablica[losowa1, losowa2].value = Math.floor(Math.random() * (max - min + 1)) + min;
+        console.log(tablica[losowa1, losowa2].value);
+
     };
+
+
+        // var losowa1 = Math.floor(Math.random() * 81) + 0;
+        // var losowa2 = Math.floor(Math.random() * 81) + 0;
+        // tablica[losowa1, losowa2].value = Math.floor(Math.random() * 9) + 1;
+        // console.log(tablica[losowa1, losowa2]);
+    
  
     
 
