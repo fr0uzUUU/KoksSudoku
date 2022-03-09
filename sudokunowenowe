@@ -107,59 +107,79 @@
 <body>
 <script>
 
-    var tablica = [];
+    var tablica1 = [];
+    var tablica2 = [];
+    var tablica3 = [];
+    var tablica4 = [];
+    var tablica5 = [];
+    var tablica6 = [];
+    var tablica7 = [];
+    var tablica8 = [];
+    var tablica9 = [];
+    tablica1 = document.getElementsByClassName('pole1');
+    tablica2 = document.getElementsByClassName('pole2');
+    tablica3 = document.getElementsByClassName('pole3');
+    tablica4 = document.getElementsByClassName('pole4');
+    tablica5 = document.getElementsByClassName('pole5');
+    tablica6 = document.getElementsByClassName('pole6');
+    tablica7 = document.getElementsByClassName('pole7');
+    tablica8 = document.getElementsByClassName('pole8');
+    tablica9 = document.getElementsByClassName('pole9');
 
 
-for (var i = 0; i < 9; i++) {
-        tablica[i] = [];                 
-    }
 
     
 
 
 function wypisz() {
 
+ }
 
-tablica = document.getElementsByClassName('pole');     
 
-        
-     
-    
-for (var a = 0; a < 9; a++)
-    for (var b = 0; b < 9; b++) {
-        if (tablica[a, b].value != "")    {
-            console.log(tablica[a, b]);
-        }
-    };
-        
-}
 
 function losuj() {
-
-    tablica = document.getElementsByClassName('pole');
-
-    for (var a = 0; a < 10; a++) {
-        min = 1;
-        max = 9;
-        var losowa1 = Math.floor(Math.random() * (max - min + 1)) + 0;
-        var losowa2 = Math.floor(Math.random() * (max - min + 1)) + 0;
-        console.log("losowa 1", losowa1);
-        console.log("losowa 2", losowa2);
-        tablica[losowa1, losowa2].value = Math.floor(Math.random() * (max - min + 1)) + min;
-        console.log(tablica[losowa1, losowa2].value);
-
-    };
-
-
-        // var losowa1 = Math.floor(Math.random() * 81) + 0;
-        // var losowa2 = Math.floor(Math.random() * 81) + 0;
-        // tablica[losowa1, losowa2].value = Math.floor(Math.random() * 9) + 1;
-        // console.log(tablica[losowa1, losowa2]);
-    
- 
-    
+ for (var a = 0; a < 4; a++) {
+     var los = Math.floor(Math.random() * 9) + 0;
+     var losliczba = Math.floor(Math.random() * 9) + 1;
+     tablica1 [los].value = losliczba;
+     var los = Math.floor(Math.random() * 9) + 0;
+     var losliczba = Math.floor(Math.random() * 9) + 1;
+     tablica2 [los].value = losliczba;
+     var los = Math.floor(Math.random() * 9) + 0;
+     var losliczba = Math.floor(Math.random() * 9) + 1;
+     tablica3 [los].value = losliczba;
+     var los = Math.floor(Math.random() * 9) + 0;
+     var losliczba = Math.floor(Math.random() * 9) + 1;
+     tablica4 [los].value = losliczba;
+     var los = Math.floor(Math.random() * 9) + 0;
+     var losliczba = Math.floor(Math.random() * 9) + 1;
+     tablica5 [los].value = losliczba;
+     var los = Math.floor(Math.random() * 9) + 0;
+     var losliczba = Math.floor(Math.random() * 9) + 1;
+     tablica6 [los].value = losliczba;
+     var los = Math.floor(Math.random() * 9) + 0;
+     var losliczba = Math.floor(Math.random() * 9) + 1;
+     tablica7 [los].value = losliczba;
+     var los = Math.floor(Math.random() * 9) + 0;
+     var losliczba = Math.floor(Math.random() * 9) + 1;
+     tablica8 [los].value = losliczba;
+     var los = Math.floor(Math.random() * 9) + 0;
+     var losliczba = Math.floor(Math.random() * 9) + 1;
+     tablica9 [los].value = losliczba;
+}
 
 }
+
+function sprawdz() {
+    var pomoc = [9];
+    for (var a=0; a<9; a++) {
+        pomoc[a] = Math.floor(Math.random() * 9) + 0;
+        console.log(pomoc[a]);
+    }
+        
+    
+}
+
 </script>
 <div id="main">
     <h1>SUDOKU</h1>
@@ -172,111 +192,113 @@ function losuj() {
 <table class="sudoku">
     <tbody>
         <tr class="1 thick_top2"> 
-            <td class="1 thick_left2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="3 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="4"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="5"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="6 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="7"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="8"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="9 thick_right2"><input class="pole" type="text" maxlength="1" /></td>
+            <td class="1 thick_left2"><input class="pole1" type="text" maxlength="1" /></td>
+            <td class="2"><input class="pole1" type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input class="pole1" type="text" maxlength="1" /></td>
+            <td class="4"><input class="pole1" type="text" maxlength="1" /></td>
+            <td class="5"><input class="pole1" type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input class="pole1" type="text" maxlength="1" /></td>
+            <td class="7"><input class="pole1" type="text" maxlength="1" /></td>
+            <td class="8"><input class="pole1" type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input class="pole1" type="text" maxlength="1" /></td>
         </tr>
         <tr class="2">
-            <td class="1 thick_left2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="3 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="4"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="5"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="6 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="7"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="8"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="9 thick_right2"><input class="pole" type="text" maxlength="1" /></td>
+            <td class="1 thick_left2"><input class="pole2" type="text" maxlength="1" /></td>
+            <td class="2"><input class="pole2" type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input class="pole2" type="text" maxlength="1" /></td>
+            <td class="4"><input class="pole2" type="text" maxlength="1" /></td>
+            <td class="5"><input class="pole2" type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input class="pole2" type="text" maxlength="1" /></td>
+            <td class="7"><input class="pole2" type="text" maxlength="1" /></td>
+            <td class="8"><input class="pole2" type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input class="pole2" type="text" maxlength="1" /></td>
         </tr>
         <tr class="3 thick_bottom">
-            <td class="1 thick_left2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="3 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="4"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="5"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="6 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="7"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="8"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="9 thick_right2"><input class="pole" type="text" maxlength="1" /></td>
+            <td class="1 thick_left2"><input class="pole3" type="text" maxlength="1" /></td>
+            <td class="2"><input class="pole3" type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input class="pole3" type="text" maxlength="1" /></td>
+            <td class="4"><input class="pole3" type="text" maxlength="1" /></td>
+            <td class="5"><input class="pole3" type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input class="pole3" type="text" maxlength="1" /></td>
+            <td class="7"><input class="pole3" type="text" maxlength="1" /></td>
+            <td class="8"><input class="pole3" type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input class="pole3" type="text" maxlength="1" /></td>
         </tr>
         <tr class="4">
-            <td class="1 thick_left2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="3 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="4"><input type="text" class="pole" maxlength="1" /></td>
-            <td class="5"><input type="text" class="pole" maxlength="1" /></td>
-            <td class="6 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="7"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="8"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="9 thick_right2"><input class="pole" type="text" maxlength="1" /></td>
+            <td class="1 thick_left2"><input class="pole4" type="text" maxlength="1" /></td>
+            <td class="2"><input class="pole4" type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input class="pole4" type="text" maxlength="1" /></td>
+            <td class="4"><input type="text" class="pole4" maxlength="1" /></td>
+            <td class="5"><input type="text" class="pole4" maxlength="1" /></td>
+            <td class="6 thick_right"><input class="pole4" type="text" maxlength="1" /></td>
+            <td class="7"><input class="pole4" type="text" maxlength="1" /></td>
+            <td class="8"><input class="pole4" type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input class="pole4" type="text" maxlength="1" /></td>
         </tr>
         <tr class="5">
-            <td class="1 thick_left2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="3 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="4"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="5"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="6 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="7"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="8"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="9 thick_right2"><input class="pole" type="text" maxlength="1" /></td>
+            <td class="1 thick_left2"><input class="pole5" type="text" maxlength="1" /></td>
+            <td class="2"><input class="pole5" type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input class="pole5" type="text" maxlength="1" /></td>
+            <td class="4"><input class="pole5" type="text" maxlength="1" /></td>
+            <td class="5"><input class="pole5" type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input class="pole5" type="text" maxlength="1" /></td>
+            <td class="7"><input class="pole5" type="text" maxlength="1" /></td>
+            <td class="8"><input class="pole5" type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input class="pole5" type="text" maxlength="1" /></td>
         </tr>
         <tr class="6 thick_bottom">
-            <td class="1 thick_left2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="3 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="4"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="5"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="6 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="7"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="8"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="9 thick_right2"><input class="pole" type="text" maxlength="1" /></td>
+            <td class="1 thick_left2"><input class="pole6" type="text" maxlength="1" /></td>
+            <td class="2"><input class="pole6" type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input class="pole6" type="text" maxlength="1" /></td>
+            <td class="4"><input class="pole6" type="text" maxlength="1" /></td>
+            <td class="5"><input class="pole6" type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input class="pole6" type="text" maxlength="1" /></td>
+            <td class="7"><input class="pole6" type="text" maxlength="1" /></td>
+            <td class="8"><input class="pole6" type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input class="pole6" type="text" maxlength="1" /></td>
         </tr>
         <tr class="7">
-            <td class="1 thick_left2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="3 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="4"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="5"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="6 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="7"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="8"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="9 thick_right2"><input class="pole" type="text" maxlength="1" /></td>
+            <td class="1 thick_left2"><input class="pole7" type="text" maxlength="1" /></td>
+            <td class="2"><input class="pole7" type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input class="pole7" type="text" maxlength="1" /></td>
+            <td class="4"><input class="pole7" type="text" maxlength="1" /></td>
+            <td class="5"><input class="pole7" type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input class="pole7" type="text" maxlength="1" /></td>
+            <td class="7"><input class="pole7" type="text" maxlength="1" /></td>
+            <td class="8"><input class="pole7" type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input class="pole7" type="text" maxlength="1" /></td>
         </tr>
         <tr class="8">
-            <td class="1 thick_left2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="3 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="4"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="5"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="6 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="7"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="8"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="9 thick_right2"><input class="pole" type="text" maxlength="1" /></td>
+            <td class="1 thick_left2"><input class="pole8" type="text" maxlength="1" /></td>
+            <td class="2"><input class="pole8" type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input class="pole8" type="text" maxlength="1" /></td>
+            <td class="4"><input class="pole8" type="text" maxlength="1" /></td>
+            <td class="5"><input class="pole8" type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input class="pole8" type="text" maxlength="1" /></td>
+            <td class="7"><input class="pole8" type="text" maxlength="1" /></td>
+            <td class="8"><input class="pole8" type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input class="pole8" type="text" maxlength="1" /></td>
         </tr>
         <tr class="9 thick_bottom2">
-            <td class="1 thick_left2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="2"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="3 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="4"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="5"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="6 thick_right"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="7"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="8"><input class="pole" type="text" maxlength="1" /></td>
-            <td class="9 thick_right2"><input class="pole" type="text" maxlength="1" /></td>
+            <td class="1 thick_left2"><input class="pole9" type="text" maxlength="1" /></td>
+            <td class="2"><input class="pole9" type="text" maxlength="1" /></td>
+            <td class="3 thick_right"><input class="pole9" type="text" maxlength="1" /></td>
+            <td class="4"><input class="pole9" type="text" maxlength="1" /></td>
+            <td class="5"><input class="pole9" type="text" maxlength="1" /></td>
+            <td class="6 thick_right"><input class="pole9" type="text" maxlength="1" /></td>
+            <td class="7"><input class="pole9" type="text" maxlength="1" /></td>
+            <td class="8"><input class="pole9" type="text" maxlength="1" /></td>
+            <td class="9 thick_right2"><input class="pole9" type="text" maxlength="1" /></td>
         </tr>
     </tbody>
 </table>
 <p>
-    <button class="przycisk_sprawdz" name="sprawdz" onclick="wypisz()">Sprawdź</button>
+    <button class="przycisk_sprawdz" name="wypisz" onclick="wypisz()">Sprawdź</button>
     <button class="przycisk_sprawdz" name="losuj" onclick="losuj()">Losuj</button>
+    <button class="przycisk_sprawdz" name="sprawdz" onclick="sprawdz()">Sprawdz</button>
+
 </p>
 </div>
-
+    <img src="zrzut.png">
 </body>
 </html>
