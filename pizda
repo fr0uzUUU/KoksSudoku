@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sudoku</title>
+    
+     <style>
+        body {
+            font-family: Arial;
+        }
+
+        .import {
+            padding-bottom: 0.3em;
+        }
+
+            
+
+        .sudoku {
+            border: 5px   black;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            
+            
+
+            #main {
+                text-align: center;
+                width: 80%;
+                height:700px;
+                background-color: #ccffff;
+                outline-style: groove; 
+                padding-top: 25px;
+                border-radius: 20px;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+
+            
+
+            .blok {
+                float: left;
+                width: 50px;
+                height: 50px;
+                border: 1px solid black;
+            }
+            #plansza {
+                float: left;
+                width: 520px;
+                height: 480px;
+            }
+    </style> 
+</head>
+<body>
+    
+
+ <div id="main">
+    <h1>SUDOKU</h1>
+
+    <div id="plansza">
+        
+    </div>
+
+
+<p>
+    <button class="przycisk_sprawdz" name="sprawdz" onclick="wypisz()">Sprawdź</button>
+    <button class="przycisk_sprawdz" name="losuj" onclick="losuj()">Losuj</button>
+</p>
+</div>
+
+<script>
+
+    for (var a = 1; a <= 9; a++){
+        for (var b = 1; b <= 9; b++) {
+            document.getElementById('plansza').innerHTML += "<input type='text' class='blok' id='"+ a + "" + b +"'></input>";
+        }    
+    }
+        
+    
+    
+    
+    </script>
+</body>
+</html>
