@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    
+
+ <div id="main">
+    <h1>SUDOKU</h1>
+
+    <div id="plansza">
+        
+    </div>
+
+    <p>
+        <button class="przycisk" id="spr" name="sprawdz" onclick="wypisz()">Sprawdź</button>
+        <button class="przycisk" id="los" name="losuj" onclick="losuj()">Losuj</button>
+        <button class="przycisk" id="nanowo" name="nanowo" onclick="odswiez()">Od nowa</button>
+    </p>
+</div>
+
+<script>
+
+    for (var a = 0; a < 9; a++){
+        for (var b = 0; b < 9; b++) {
+            document.getElementById('plansza').innerHTML += "<input type='text' max='1' value='' class='blok' id='"+ a + "" + b +"'></input>";
+        }    
+    }
+
+    function losuj(){
+        for (var a = 1; a <= 20; a++) {
+            var losowa1 = Math.floor(Math.random() * 9) + 0;
+            var losowa2 = Math.floor(Math.random() * 9) + 0;
+            var pole = document.getElementById(losowa1+""+losowa2);
+            pole.value = Math.floor(Math.random() * 9) + 1;
+        };
+        
+        const button = document.getElementById('los');
+        button.disabled = true;
+    }
+
+    function odswiez(){
+        window.location.reload(true);
+    }
+
+    function wypisz(){
+        sprawdzone = new Boolean(false);
+
+        while(sprawdzone == true){
+            
+        }
+    }
+    
+    
+    </script>
+</body>
+</html>
