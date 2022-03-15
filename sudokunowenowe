@@ -66,7 +66,7 @@
                 background-color: greenyellow;
             }
             .przycisk:disabled {
-
+                background-color: grey;
             }
     </style> 
 </head>
@@ -82,29 +82,48 @@
 
 
 <p>
-    <button class="przycisk" name="sprawdz" id="but1" onclick="wypisz()">Sprawdź</button>
+    <button class="przycisk" name="sprawdz" id="but1" onclick="sprawdz()">Sprawdź</button>
     <button class="przycisk" name="losuj" id="but2" onclick="losuj()">Losuj</button>
 </p>
 </div>
 
 <script>
-    
-
+    var tablica = document.getElementsByClassName('blok');
+    const button = document.getElementById('but1');
+    const button2 = document.getElementById('but2');
     for (var a = 0; a < 9; a++){
         for (var b = 0; b < 9; b++) {
             document.getElementById('plansza').innerHTML += "<input type='text' class='blok' id='"+ a + "" + b +"'></input>";
         }    
     }
-    
- function losuj() {
-    var tablica = document.getElementsByClassName('blok');
+    // ------------------------------------------------------------------
+    function checkColumn() {
+        
+    }
 
-    for (var a = 1; a <= 20; a++) { 
-        var losowa1 = Math.floor(Math.random() * 81) + 0;
-        tablica[losowa1].value = Math.floor(Math.random() * 9) + 1;
-        console.log(tablica[losowa1]);
+
+    function checkRow() {
+        prawda = new Boolean(true);
+        for (var a = 0; a < 9; a++) {
+            
+        }
+            
+    }
+
+
+
+
+ function losuj() {
+
+
+    for (var a = 0; a < 25; a++) { 
+        var losowa1 = Math.floor(Math.random() * 9) + 0;
+        var losowa2 = Math.floor(Math.random() * 9) + 0;
+        var pole = document.getElementById(losowa1 + "" + losowa2);
+        pole.value = Math.floor(Math.random() * 9) + 1;
+        
     };
-    const button2 = document.getElementById('but2');
+    
     button2.disabled = true;
  }
     </script>
