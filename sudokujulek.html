@@ -73,10 +73,9 @@
         <button class="przycisk" name="sprawdz" id="but1" onclick="sprawdz()">
           Sprawdź
         </button>
-        <button class="przycisk" name="losuj" id="but2" onclick="losuj()">
-          Losuj
-        </button>
       </p>
+
+      <p id="wynik"></p>
     </div>
 
     <script>
@@ -97,6 +96,7 @@
           for (let j = 0; j < 9; j++) {
             if (document.getElementById(i + "" + j).id % 3 == 0) {
               document.getElementById(i + "" + j).value = plansza[i][j];
+              document.getElementById(i + "" + j).disabled = true;
             }
           }
         }
@@ -115,16 +115,16 @@
             "' maxlength = 1></input>";
         }
       }
-      // ------------------------------------------------------------------
 
       function sprawdz() {
         for (let i = 0; i < 9; i++) {
           for (let j = 0; j < 9; j++) {
             if (document.getElementById(i + "" + j).value == plansza[i][j]) {
               document.getElementById(i + "" + j).disabled = true;
-            }
-            else {
-                document.getElementById(i + "" + j).style.backgroundColor = "red";
+              document.getElementById(i + "" + j).style.backgroundColor =
+                "grey";
+            } else {
+              document.getElementById(i + "" + j).style.backgroundColor = "red";
             }
           }
         }
