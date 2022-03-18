@@ -1,0 +1,167 @@
+<!-- Gra sudoku oparta na JavaScript -->
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <title>Sudoku</title>
+
+    <style>
+      body {
+        font-family: Arial;
+      }
+
+      .import {
+        padding-bottom: 0.3em;
+      }
+
+      .sudoku {
+        border: 5px black;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #main {
+        text-align: center;
+        width: 80%;
+        height: 700px;
+        background-color: #ccffff;
+        outline-style: groove;
+        padding-top: 25px;
+        border-radius: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+
+      .blok {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        text-align: center;
+        font-family: Arial;
+        font-size: xx-large;
+      }
+      .blok:hover {
+        background-color: gray;
+      }
+      #plansza {
+        width: 520px;
+        height: 480px;
+        display: inline-block;
+      }
+
+      .przycisk {
+        border: 1px solid black;
+        width: 100px;
+        height: 50px;
+        font-size: large;
+        font-family: Arial;
+      }
+      .przycisk:hover {
+        background-color: greenyellow;
+      }
+      .przycisk:disabled {
+        background-color: grey;
+      }
+    </style>
+  </head>
+  <body onload="generuj()">
+    <div id="main">
+      <h1>SUDOKU</h1>
+      <!-- Odnośniki do innych podstron, które zawierają tą samą logikę działania, natomiast inne plansze -->
+      <p>
+        <a href="sudokulatwe.html">Łatwe</a>
+        <a href="sudokusrednie.html">Średnie</a>
+        <a href="sudokutrudne.html">Trudne</a>
+      </p>
+
+
+      <div id="plansza"></div>
+
+      <p>
+        <button class="przycisk" name="sprawdz" id="but1" onclick="sprawdz()">Sprawdź</button>
+        <button class="przycisk" name="losuj" id="but2" onclick="generuj()">Generuj</button>
+          
+      </p>
+      <h3>Igor Iwandżijski | Michał Ogórek | Juliusz Rączkowski</h3>
+
+      <p id="wynik"></p>
+    </div>
+
+    <script>
+      //w zależności od podstrony zdefiniowana na sztywno plansza
+      var plansza = [
+        [6, 4, 2, 1, 8, 7, 9, 5, 3],
+        [3, 9, 8, 5, 4, 6, 2, 1, 7],
+        [1, 5, 7, 3, 9, 2, 4, 8, 6],
+        [7, 1, 5, 6, 3, 9, 8, 2, 4],
+        [4, 6, 3, 8, 2, 5, 7, 9, 1],
+        [8, 2, 9, 7, 1, 4, 3, 6, 5],
+        [5, 8, 1, 2, 7, 3, 6, 4, 9],
+        [9, 3, 6, 4, 5, 8, 1, 7, 2],
+        [2, 7, 4, 9, 6, 1, 5, 3, 8],
+      ];
+
+    //   function generuj() {
+    //     for (let i = 0; i < 9; i++) {
+    //       for (let j = 0; j < 9; j++) {
+    //         if (document.getElementById(i + "" + j).id % 3 == 0) {
+    //           document.getElementById(i + "" + j).value = plansza[i][j];
+    //           document.getElementById(i + "" + j).disabled = true;
+    //         }
+    //       }
+    //     }
+    //   }
+      function generuj() {
+          for (let i = 0; i < 9; i++)
+              for (let j = 0; j < 9; j++) {
+                document.getElementById(i + "" + j).value = "";                    
+                document.getElementById(i + "" + j).disabled = false;
+                document.getElementById(i + "" + j).style.backgroundColor = "";
+              }
+
+        //losujemy id pozycji, która ma być odkryta przed użytkownikiem
+        for (let i = 0; i < 30; i++) {
+            var losowa1 = Math.floor(Math.random() * 9) + 0;
+            var losowa2 = Math.floor(Math.random() * 9) + 0;
+            document.getElementById(losowa1 + "" + losowa2).value = plansza[losowa1][losowa2];
+            document.getElementById(losowa1 + "" + losowa2).disabled = true; //zabieramy możliwość wstawiania odkrytych pól
+        }
+    }
+
+
+      var tablica = document.getElementsByClassName("blok");
+      const button = document.getElementById("but1");
+      const button2 = document.getElementById("but2");
+      for (var i = 0; i < 9; i++) {
+        for (var j = 0; j < 9; j++) {
+          //generowania planszy 
+          document.getElementById("plansza").innerHTML +=
+            "<input type='text' class='blok' id='" +
+            i +
+            "" +
+            j +
+            "' maxlength = 1></input>";
+        }
+      }
+
+      function sprawdz() {
+        for (let i = 0; i < 9; i++) {
+          for (let j = 0; j < 9; j++) {
+            /*przyrównujemy wartości podane przez użytkownika z wartościami zadeklarowanymi w tabeli
+            jeżeli wartość nie odpowiada zadeklarowanej wartości z tabeli zmieniamy kolor,
+            jeżeli wartość jest identyczna, odbieramy możliwość wstawienia tam cyfry
+            */
+            if (document.getElementById(i + "" + j).value == plansza[i][j]) {
+              document.getElementById(i + "" + j).disabled = true;
+              document.getElementById(i + "" + j).style.backgroundColor =
+                "green";
+            } else if (document.getElementById(i + "" + j).value != "") {
+              document.getElementById(i + "" + j).style.backgroundColor = "red";
+            }
+          }
+        }
+      }
+    </script>
+    
+  </body>
+</html>
