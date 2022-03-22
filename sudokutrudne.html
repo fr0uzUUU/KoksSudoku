@@ -142,16 +142,21 @@
       }
 
       function sprawdz() {
+        var wygrana = 0;
         for (let i = 0; i < 9; i++) {
           for (let j = 0; j < 9; j++) {
             if (document.getElementById(i + "" + j).value == plansza[i][j]) {
               document.getElementById(i + "" + j).disabled = true;
               document.getElementById(i + "" + j).style.backgroundColor =
                 "green";
+                wygrana++;  
             } else if (document.getElementById(i + "" + j).value != "") {
               document.getElementById(i + "" + j).style.backgroundColor = "red";
             }
           }
+        }
+        if(wygrana == 81){
+          alert("Wygrałeś")
         }
       }
     </script>
